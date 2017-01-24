@@ -3,10 +3,22 @@
   <div class="flex-item" fxFlex>
     <a routerLink="/" routerLinkActive="active"><-</a>  
     <form novalidate [formGroup]="newSurveyForGroup" (ngSubmit)="onSubmit(newSurveyForGroup)">
-      <input type="text" formControlName="id"/>
-      {{ newSurveyForGroup.controls.id?.errors | json }}
-      <input type="text" formControlName="name"/>
-      {{ newSurveyForGroup.controls.name?.errors | json }}
+      <div>
+        <md-input-container>
+          <input md-input placeholder="Id" formControlName="id">
+        </md-input-container>
+        <small *ngIf="newSurveyForGroup.controls.id?.hasError('required') && newSurveyForGroup.controls.id?.touched">
+          {{ newSurveyForGroup.controls.id?.errors | json }}
+        </small>
+      </div>
+      <div>
+        <md-input-container>
+          <input md-input placeholder="Name" formControlName="name">
+        </md-input-container>
+        <small *ngIf="newSurveyForGroup.controls.name?.hasError('required') && newSurveyForGroup.controls.name?.touched">
+          {{ newSurveyForGroup.controls.name?.errors | json }}
+        </small>
+      </div>
       <button type="submit" [disabled]="newSurveyForGroup.invalid">Add</button>
     </form>
   </div>
