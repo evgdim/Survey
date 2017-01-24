@@ -5,6 +5,7 @@ import { HttpModule } from '@angular/http';
 import { AppRoutingModule } from './app-routing.module';
 import { MaterialModule } from '@angular/material';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { ReactiveFormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { SurveyService } from './services/survey.service';
@@ -25,7 +26,8 @@ import { SurveyNewComponent } from './survey-new/survey-new.component';
     HttpModule,
     AppRoutingModule,
     MaterialModule.forRoot(),
-    FlexLayoutModule.forRoot()
+    FlexLayoutModule.forRoot(),
+    ReactiveFormsModule
   ],
   providers: [SurveyService],
   bootstrap: [AppComponent]
