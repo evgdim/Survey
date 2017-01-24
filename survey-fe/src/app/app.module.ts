@@ -11,11 +11,13 @@ import { SurveyService } from './services/survey.service';
 
 import 'hammerjs';
 import { SurveyOverviewComponent } from './survey-overview/survey-overview.component';
+import { SurveyNewComponent } from './survey-new/survey-new.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    SurveyOverviewComponent
+    SurveyOverviewComponent,
+    SurveyNewComponent
   ],
   imports: [
     BrowserModule,
