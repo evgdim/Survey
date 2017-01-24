@@ -1,11 +1,10 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
+import { SurveyOverviewComponent } from './survey-overview/survey-overview.component';
+
 const routes: Routes = [
-  {
-    path: '',
-    children: []
-  }
+  { path: '', component: SurveyOverviewComponent, pathMatch: 'full' }
 ];
 
 @NgModule({

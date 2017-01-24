@@ -1,0 +1,18 @@
+<div class="flex-container" fxLayout="row" fxLayout.xs="column" fxLayoutAlign="center center" fxLayoutAlign.xs="start">
+  <div class="flex-item" fxFlex="20%" fxFlex.xs="40%"> </div>
+  <div class="flex-item" fxFlex>
+    <table>
+      <tr>
+        <th>#</th>
+        <th>Name</th>
+        <th>Date</th>
+      </tr>
+      <tr *ngFor="let surv of surveys | async">
+        <td>{{surv.id}}</td>
+        <td>{{surv.name}}</td>
+        <td>{{surv.createDate | date }}</td>
+      </tr>
+    </table>
+</div>
+<div class="flex-item" fxFlex="20%"> </div>
+</div>
