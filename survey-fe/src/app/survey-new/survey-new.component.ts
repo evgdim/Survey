@@ -2,6 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup } from '@angular/forms';
 import { FormControl } from '@angular/forms';
 import { Validators } from '@angular/forms';
+import { Router } from '@angular/router';
+
+import { SurveyService } from '../services/survey.service';
 
 @Component({
   selector: 'app-survey-new',
@@ -10,7 +13,7 @@ import { Validators } from '@angular/forms';
 })
 export class SurveyNewComponent implements OnInit {
   newSurveyForGroup: FormGroup;
-  constructor() { }
+  constructor(private surveyServ: SurveyService, private router: Router) { }
 
   ngOnInit() {
     this.newSurveyForGroup = new FormGroup({
@@ -21,9 +24,8 @@ export class SurveyNewComponent implements OnInit {
 
   onSubmit(surveyForm: FormGroup){
     if(surveyForm.valid){
-      console.log(surveyForm);
-    } else {
-      console.log("not valid");
-    }
+      this.surveyServ.addSurvey(surveyForm.value);
+      this.router.navigate(['/']);
+    } 
   }
 }

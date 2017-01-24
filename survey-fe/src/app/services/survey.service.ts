@@ -23,6 +23,7 @@ export class SurveyService {
   }
 
   addSurvey(survey: Survey){
+    survey.createDate = new Date();
     this.surveys.push(survey);
   }
 }
