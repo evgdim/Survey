@@ -1,6 +1,11 @@
 {
   "compilerOptions": {
     "baseUrl": "",
+    "compilerOptions": {
+      "types": [
+        "hammerjs"
+      ]
+    },
     "declaration": false,
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
